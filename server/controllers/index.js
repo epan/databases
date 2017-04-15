@@ -15,8 +15,9 @@ module.exports = {
         console.log('postData is: ', postData);
         // Convert js obj => sql insert, send to DB
         models.messages.post(postData);
-      })
+      });
       console.log('app tried to post messages from CONTROLLER');
+      res.end();
     } // a function which handles posting a message to the database
   },
 

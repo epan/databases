@@ -15,6 +15,7 @@
     "test": "mocha server/spec/server-spec.js; RES=$?; kill %1; exit $RES",
     "test:es6": "mocha --compilers js:babel-register server/spec/server-spec.js; RES=$?; kill %1; exit $RES",
     "lint": "eslint ./"
+
   },
   "dependencies": {
     "body-parser": "^1.9.2",

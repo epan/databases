@@ -11,7 +11,12 @@ exports.dbConnection = mysql.createConnection({
   database: 'chat'
 });
 
-
+exports.callbackLog = (err, results, fields) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log('INSERT RESULT IS: ', results);
+};
 // exports.dbConnection.connect((err) => {
 //   if (err) {
 //     console.log(`Error connecting to DB: ${err}`);
