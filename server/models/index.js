@@ -20,7 +20,7 @@ module.exports = {
       console.log('POST data from MODEL: ', parsedData.text);
       console.log('app tried to post messages from MODELS');
 
-      var testPostQuery = `INSERT INTO messages (id, text, userId, roomId) VALUES (2, 'again', 2, 3)`;
+      var testPostQuery = `INSERT INTO messages (id, text, userId, roomId) VALUES (5, '${parsedData.text}', 2, 3)`;
       db.dbConnection.query(testPostQuery,(err, results, fields) => {
         if (err) {
           console.log(err);
