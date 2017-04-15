@@ -7,10 +7,10 @@ module.exports = {
       console.log('app tried to get messages from CONTROLLER');
       // models.messages.get();
       res.writeHead(200);
-      res.end(JSON.stringify({'results': [{
-        'username': 'nik',
-        'text': 'im static',
-        'roomname': 'lobby'
+      res.end(JSON.stringify({results: [{
+        username: 'nik',
+        text: 'im static',
+        roomname: 'lobby'
       }]}));
     }, // a function which handles a get request for all messages
     post: function (req, res) {

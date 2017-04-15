@@ -68,6 +68,10 @@ var app = {
       // data: { order: '-createdAt' },
       contentType: 'application/json',
       success: function(data) {
+        var data = JSON.parse(data);
+        console.log('hello from fetch success function');
+        console.log('fetch data obj is: ', data);
+
         // Don't bother if we have nothing to work with
         if (!data.results || !data.results.length) { return; }
 
