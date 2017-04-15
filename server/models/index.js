@@ -21,13 +21,26 @@ module.exports = {
       console.log('app tried to post messages from MODELS');
 
       var testPostQuery = `INSERT INTO messages (id, text, userId, roomId) VALUES (2, 'again', 2, 3)`;
-      db.dbConnection.connect((err) => {
+      db.dbConnection.query(testPostQuery,(err, results, fields) => {
         if (err) {
-          console.log(`Error connecting to DB: ${err}`);
-        } else {
-          console.log('DB Connection established.');
+          console.log(err);
         }
+        console.log('INSERT RESULT IS: ', results);
       });
+      // db.dbConnection.query = mysql.query(testPostQuery, (err, results, fields) => {
+      //   if (err) {
+      //     console.log(err);
+      //   }
+      //   console.log('INSERT RESULT IS: ', results);
+      // });
+
+      // db.dbConnection.connect((err) => {
+      //   if (err) {
+      //     console.log(`Error connecting to DB: ${err}`);
+      //   } else {
+      //     console.log('DB Connection established.');
+      //   }
+      // });
 
     } // a function which can be used to insert a message into the database
   },

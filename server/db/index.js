@@ -11,6 +11,7 @@ exports.dbConnection = mysql.createConnection({
   database: 'chat'
 });
 
+
 // exports.dbConnection.connect((err) => {
 //   if (err) {
 //     console.log(`Error connecting to DB: ${err}`);
@@ -19,12 +20,7 @@ exports.dbConnection = mysql.createConnection({
 //   }
 // });
 //
-// exports.dbConnection.query = mysql.query(query, (err, results, fields) => {
-//   if (err) {
-//     console.log(err);
-//   }
-//   console.log('INSERT RESULT IS: ', results);
-// });
+// exports.dbConnection.query = mysql.query(query, callback);
 
 // exports.dbConnection.end((err) => {
 //   console.log('DB Connection ended.')
