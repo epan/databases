@@ -2,8 +2,14 @@ var db = require('../db');
 
 module.exports = {
   messages: {
-    get: function () {
+    get: function (callback) {
       console.log('app tried to get messages from MODELS');
+      db.dbConnection.query(`SELECT * FROM messages JOIN users ON messages.userId = users.id`, (err, results, fields) => {
+        var responseData = {
+          results: results
+        };
+        callback(responseData);
+      });
 
     }, // a function which produces all the messages
     post: function (postData) {

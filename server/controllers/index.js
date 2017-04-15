@@ -5,13 +5,11 @@ module.exports = {
     get: function (req, res) {
       console.log('The request: ', JSON.stringify(req.body));
       console.log('app tried to get messages from CONTROLLER');
-      // models.messages.get();
-      res.writeHead(200);
-      res.end(JSON.stringify({results: [{
-        username: 'nik',
-        text: 'im static',
-        roomname: 'lobby'
-      }]}));
+      models.messages.get((data) => {
+        res.writeHead(200);
+        // console.log(data);
+        res.end(JSON.stringify(data));
+      });
     }, // a function which handles a get request for all messages
     post: function (req, res) {
       console.log('THIS IS THE REQ BODY: ', req.body);
