@@ -16,7 +16,7 @@ describe('Persistent Node Chat Server', function() {
     });
     dbConnection.connect();
 
-       var tablename = ""; // TODO: fill this out
+       var tablename = "messages"; // √ TODO: fill this out
 
     /* Empty the db table before each test so that multiple tests
      * (or repeated runs of the tests) won't screw each other up: */
@@ -47,7 +47,7 @@ describe('Persistent Node Chat Server', function() {
         // Now if we look in the database, we should find the
         // posted message there.
 
-        // TODO: You might have to change this test to get all the data from
+        // √ TODO: You might have to change this test to get all the data from
         // your message table, since this is schema-dependent.
         var queryString = 'SELECT * FROM messages';
         var queryArgs = [];
